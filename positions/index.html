@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .parent {
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        .child-one {
+            background-color: lightgreen;
+            padding: 10px;
+        }
+
+        .child-two {
+            background-color: lightcoral;
+        }
+
+        .child-three {
+            background-color: lightpink;
+        }
+
+        .grand-child-one {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">Parent
+        <div class="child-one child">One
+            <div class="grand-child-one">Grand Child One</div>
+        </div>
+        <div class="child-two child">Two</div>
+        <div class="child-three child">Three</div>
+    </div>
+</body>
+
+</html>
