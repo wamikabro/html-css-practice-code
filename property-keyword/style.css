@@ -1,0 +1,47 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: var(--color, red);
+}
+
+.box1 {
+  /* changing the variable */
+  --color: blue;
+}
+
+.box2 {
+  /* i am even able to change the variable to any other value. That breaks the result. That's why we should use @property */
+  /* now this box is invisible because it has no default color */
+  --color: 54px;
+}
+
+@property --property-color {
+  syntax: "<color>"; /* Restricts the type of value */
+  inherits: false; /* Specifies whether it inherits */
+  initial-value: #3498db; /* Defines an initial value */
+}
+
+.boxWithProperty {
+  width: 100px;
+  height: 100px;
+  background-color: var(--property-color);
+}
+
+.boxWithProperty.box2 {
+  --property-color: green;
+}
+
+.boxWithProperty.box3 {
+  /* impossible to store anything else except color naw */
+  /* it will prefer to be default / initial value instead  */
+  --property-color: 53px;
+}
